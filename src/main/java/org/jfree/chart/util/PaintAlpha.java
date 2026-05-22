@@ -279,10 +279,10 @@ public class PaintAlpha {
 
                 for (int p = 0; p < pix.length; p++) {
                     nco    =  img.getColorModel().getComponents(pix[p], nco, 0);
-                    nco[0] *= FACTOR; // Red
-                    nco[1] *= FACTOR; // Green
-                    nco[2] *= FACTOR; // Blue. Now map computed colour to
-                                      // nearest in Palette...
+                    nco[0] = (int) (nco[0] * FACTOR); // Red
+                    nco[1] = (int) (nco[1] * FACTOR); // Green
+                    nco[2] = (int) (nco[2] * FACTOR); // Blue. Now map computed colour to
+                                                      // nearest in Palette...
                     pix[p] = img.getColorModel().getDataElement(nco, 0);
                 }
                 /**/ ras.setPixels(miX, y, wid, 1, pix);
